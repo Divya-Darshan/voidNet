@@ -28,6 +28,9 @@ export default function RootLayout({
     <html lang="en">
         <head>
           <link rel="icon" href="/voidnet-bg.png" type="image/x-icon" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com"  />
+          <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet"></link>
           <title>Create Next App</title>
         </head>
       <body
