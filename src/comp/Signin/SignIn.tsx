@@ -1,5 +1,5 @@
+"use client";
 import "../../app/globals.css";
-import { auth } from "../firebase/auth";
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -12,21 +12,49 @@ import {
 } from "@/components/ui/card"
 
 export default function SignIn() {
-  return (
-    <div className="flex items-center justify-center h-screen">
-        
-            <Card className="w-96 h-90 bg-transparent text-white">
-            <CardHeader>
-              <CardTitle className=" text-4xl ">Login to your account!</CardTitle>
-              <CardDescription className=" text-2xl ">Use your email below to login to your account.</CardDescription>
-              <CardAction>            <Button variant="outline" className="text-2xl  bg-transparent" >SignIn</Button>
-</CardAction>
-            </CardHeader>
 
-            <CardFooter>
-              <Button className=" w-85 text-3xl p-7 mt-10 cursor-pointer ">Login</Button>
-            </CardFooter>
-          </Card>
+  function hello() {
+    // Implement sign-in logic here using Firebase Auth
+    console.log("Sign In button clicked");    
+  }
+
+  return (
+    <div className="flex items-center justify-center h-screen m-5 ">
+      <Card 
+        className="
+          w-full h-60 max-w-sm sm:max-w-md md:max-w-lg
+          bg-transparent text-white shadow-lg rounded-2xl
+        "
+      >
+        <CardHeader>
+          <CardTitle className="text-2xl sm:text-3xl md:text-4xl ">
+            Login to your account!
+          </CardTitle>
+          <CardDescription className="text-base sm:text-lg md:text-xl ">
+            Use your email below to login to your account.
+          </CardDescription>
+          <CardAction className="flex justify-center mt-4">
+            <Button 
+              variant="outline" 
+              className="text-sm sm:text-base md:text-xl bg-transparent cursor-pointer "
+            >
+              Sign In
+            </Button>
+          </CardAction>
+        </CardHeader>
+
+        <CardFooter className=" flex justify-center">
+          <Button onClick={hello}
+            className="
+               bg-white text-black hover:text-white hover: boreder-white
+              w-full text-lg sm:text-xl md:text-2xl 
+              p-3 sm:p-5 md:p-7 sm:mt-6
+            "
+          >
+            Login
+          </Button>
+        </CardFooter>
+      </Card>
     </div>
   );
 }
