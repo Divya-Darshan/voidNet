@@ -10,12 +10,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { auth, GoogleProvider } from "@/comp/firebase/auth";
+import { signInWithPopup } from "firebase/auth";
 
 export default function SignIn() {
 
-  function hello() {
-    // Implement sign-in logic here using Firebase Auth
-    console.log("Sign In button clicked");    
+  async function SignIn() {
+      await signInWithPopup(auth, GoogleProvider)
   }
 
   return (
@@ -37,6 +38,7 @@ export default function SignIn() {
             <Button 
               variant="outline" 
               className="text-sm sm:text-base md:text-xl bg-transparent cursor-pointer "
+               onClick={SignIn}
             >
               Sign In
             </Button>
@@ -44,7 +46,7 @@ export default function SignIn() {
         </CardHeader>
 
         <CardFooter className=" flex justify-center">
-          <Button onClick={hello}
+          <Button onClick={SignIn}
             className="
                bg-white text-black hover:text-white hover: boreder-white
               w-full text-lg sm:text-xl md:text-2xl 
